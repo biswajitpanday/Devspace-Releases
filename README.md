@@ -1,139 +1,237 @@
-# DevSpace — Public Releases
+<!--
+This file is the README for the PUBLIC release repo: github.com/biswajitpanday/Devspace-Releases
+Copy its contents into that repo's README.md (overwriting whatever is there).
 
-Centralize your dev environment: projects, tools, credentials, and Git — in one place, on one keyboard shortcut.
+Screenshots needed in the public repo at /assets/:
+- hero.png             Dashboard
+- tool-discovery.png   Auto-discovered tools
+- git-view.png         Git commit graph
+- project-details.png  Project details view (tools, credentials, quick actions)
+- wizard.png           Project setup wizard
+- demo.gif             Optional 10-15s demo
+-->
 
-> **Source code is currently private.** This repository hosts only the public binary releases of DevSpace. Use the **Issues** tab to report bugs and request features.
+<div align="center">
+
+# DevSpace
+
+### Centralize every developer project. Tools, credentials, git, terminals — one dashboard.
+
+[![Download Latest](https://img.shields.io/github/v/release/biswajitpanday/Devspace-Releases?label=Download&color=4fc3f7&style=for-the-badge&logo=windows)](https://github.com/biswajitpanday/Devspace-Releases/releases/latest)
+[![Total Downloads](https://img.shields.io/github/downloads/biswajitpanday/Devspace-Releases/total?label=Downloads&color=29b6f6&style=for-the-badge)](https://github.com/biswajitpanday/Devspace-Releases/releases)
+[![Platform](https://img.shields.io/badge/Windows-10%2F11-blue?style=for-the-badge&logo=windows)](https://github.com/biswajitpanday/Devspace-Releases/releases/latest)
+[![Stars](https://img.shields.io/github/stars/biswajitpanday/Devspace-Releases?style=for-the-badge&color=yellow)](https://github.com/biswajitpanday/Devspace-Releases/stargazers)
+
+[**🌐 Website**](https://biswajitpanday.github.io/devspace/) · [**⬇️ Download**](https://github.com/biswajitpanday/Devspace-Releases/releases/latest) · [**🔒 Privacy**](https://biswajitpanday.github.io/devspace/privacy.html) · [**🐛 Report a bug**](https://github.com/biswajitpanday/Devspace-Releases/issues)
+
+![DevSpace dashboard](assets/hero.png)
+
+</div>
 
 ---
 
-## ⚠️ Preview Build Notice
+## 🤔 The problem
 
-DevSpace is in **public preview**. Each release includes a hardcoded expiry date — once that date passes, most features stop working and you'll be prompted to download a newer build.
+Every developer morning looks the same:
 
-- The current expiry date is shown on every release page and inside the app (Help → About).
-- Your data (projects, settings, credentials) stays on your machine. It is **not** deleted when a build expires.
-- Import/Export remains available after expiry so you can carry your data forward.
+| 🔄 Switch project | Mentally re-establish context |
+| :--- | :--- |
+| 🛠️ Open the *right* IDE | For *this* stack |
+| 📋 Find the credentials | Notion? Sticky note? `.env`? |
+| 💻 Spawn 3 terminals | Build, git, tail |
+| 🌐 Open the right tabs | Docs, dashboard, ticket tracker |
+| 🗄️ Launch the DB client | Connect with the right credentials |
 
-This is honest beta software. Expect rough edges. Please report what you find.
+**~30 minutes lost. Every. Single. Day.**
+
+## ✅ The solution
+
+DevSpace gives you **one card per project** on a dashboard. Click it and your IDE, terminals, browser tabs, and DB client launch — exactly the way you set them up.
+
+<table>
+<tr>
+<td width="50%"><img src="assets/tool-discovery.png" alt="Auto-discovered tools"/></td>
+<td width="50%"><img src="assets/git-view.png" alt="Git workflow"/></td>
+</tr>
+<tr>
+<td><b>Auto-discovers 100+ tools in &lt;3 seconds</b><br>Dynamic Windows enumeration finds every IDE, CLI, browser, and DB client on your machine.</td>
+<td><b>Full git workflow built in</b><br>Commit graph, blame, conflict resolver, branch compare, stash. No more terminal context-switching.</td>
+</tr>
+<tr>
+<td width="50%"><img src="assets/project-details.png" alt="Project details"/></td>
+<td width="50%"><img src="assets/wizard.png" alt="Project wizard"/></td>
+</tr>
+<tr>
+<td><b>Project details at a glance</b><br>Tools, credentials (DPAPI-encrypted), quick actions, and git status — all in one card.</td>
+<td><b>Quick setup wizard</b><br>Add a project in 3 steps. Auto-detect git, link your tools, save credentials.</td>
+</tr>
+</table>
 
 ---
 
 ## ⬇️ Download
 
-Grab the latest release: **[Releases page →](https://github.com/biswajitpanday/Devspace-Releases/releases/latest)**
+<div align="center">
 
-| Format | File | Best for |
-|---|---|---|
-| **Installer** | `DevSpace Setup <version>.exe` | Most users — adds Start menu / Desktop shortcut, supports clean uninstall. |
-| **Portable** | `DevSpace-<version>-portable.zip` | Trying it out without installing. Extract anywhere, run `DevSpace.exe`. |
+### [Download DevSpace v2.2.0-preview for Windows](https://github.com/biswajitpanday/Devspace-Releases/releases/latest)
 
-Both are unsigned during preview — see SmartScreen section below.
+</div>
 
----
+| Format | File | Size | Best for |
+|---|---|---|---|
+| **NSIS Installer** | `DevSpace.Setup.*.exe` | ~80 MB | Most users — start menu, auto-update |
+| **Portable Zip** | `DevSpace-*-portable.zip` | ~75 MB | USB-portable, no install |
 
-## ⚠️ Windows SmartScreen Warning — What to Expect
-
-When you run the installer or the portable `.exe`, **Windows will show a blue "Windows protected your PC" dialog**:
-
-> Windows protected your PC. Microsoft Defender SmartScreen prevented an unrecognized app from starting. Running this app might put your PC at risk.
-
-This appears for any unsigned application on Windows. It does **not** mean the file is malicious — it means Microsoft hasn't yet seen this exact binary signed by a recognized publisher.
-
-### How to run the app anyway
-
-1. Click **More info** on the SmartScreen dialog.
-2. A **Run anyway** button will appear at the bottom — click it.
-3. The app launches normally.
-
-### For the portable `.zip`
-
-After extracting the zip, Windows may still flag the `.exe` inside (Mark-of-the-Web carries through). You can pre-clear it:
-
-1. Right-click `DevSpace.exe` → **Properties**.
-2. At the bottom of the **General** tab, tick **Unblock** if shown → **OK**.
-3. Double-click to launch — no SmartScreen prompt.
-
-### Why isn't it signed?
-
-A trusted code-signing certificate from a reseller (DigiCert, Sectigo, etc.) costs **USD 200–400/year** for OV, more for EV. Microsoft's newer **Azure Trusted Signing** service is around **USD 10/month** but still represents a real recurring cost.
-
-We're keeping running costs at zero during the preview phase so DevSpace stays free while it's still rough. Code signing is on the roadmap once the project is past public preview.
-
-If you'd rather not run unsigned binaries, that's a perfectly reasonable position — please come back when we ship signed builds.
+**System requirements:** Windows 10 (64-bit) or Windows 11 · 4 GB RAM · 500 MB free disk
 
 ---
 
-## 💻 System Requirements
+## ✨ Features
 
-- Windows 10 (64-bit) or Windows 11
-- ~150 MB free disk space
-- ~200 MB RAM at idle
+### One dashboard, every project
+- Pin frequently-used projects · search by tag, organization, or path
+- Bulk-import git repos by scanning directory trees
+- Per-project: tools, credentials, quick commands, git status
 
-macOS and Linux builds are not produced during the preview.
+### Auto-discover your dev tools
+- Dynamic Windows enumeration: Registry ARP + Start Menu + PATH
+- Finds **100+ apps in under 3 seconds** on a typical dev machine
+- Zero hardcoded patterns — new tools appear automatically
+- Smart classification: IDEs, runtimes, source control, containers, databases, terminals, browsers, and more
 
----
+### Encrypted credential vault
+- Per-project credentials encrypted with **Microsoft DataProtection (DPAPI)**
+- Tied to your Windows user account — never plain text on disk
+- One-click copy with success feedback
+- Multiple credentials per project
 
-## 🔒 Privacy
+### Full git workflow, built in
+- Visual commit graph with branch / author / date filters
+- Blame view, conflict resolver, branch comparison
+- Stash management, cherry-pick, rebase, merge
+- 4-panel layout: graph + commit details + staging + diff
+- Real-time progress via SignalR · operation cancellation
 
-DevSpace is **local-first** during the preview:
+### Quick actions per project
+- 26+ built-in git commands · custom command terminal
+- Drag-and-drop reordering · custom priority per project
+- One click launches: IDE + terminal + browser + DB client
 
-- Projects, tools, credentials, and settings live on your machine in a local SQLite database.
-- Credentials are encrypted with Windows DPAPI (Microsoft.DataProtection).
-- **No telemetry.** **No cloud sync.** **No account required.**
-- The app makes no outbound HTTP calls except to:
-  - Its own bundled local backend (`localhost:7003`).
-  - Whatever URLs you explicitly open from the UI (e.g., a project's Git remote).
-
-Cloud sync is planned for a later phase but is **not** part of this preview.
-
----
-
-## ⚠️ Known Limitations (Preview)
-
-- **Build expiry** — see notice above.
-- **Unsigned binaries** — SmartScreen prompts on first launch.
-- **No auto-update** — install new builds manually by downloading from this page.
-- **Windows only** during preview.
-- **Beta-quality bugs** are expected. Please file issues.
-
----
-
-## 🐛 Reporting Issues
-
-Source is private, but issues live here on the public repo.
-
-- **Bug reports:** [Open a new issue →](https://github.com/biswajitpanday/Devspace-Releases/issues/new)
-- **Feature requests:** [Open a new issue →](https://github.com/biswajitpanday/Devspace-Releases/issues/new) (please prefix the title with `[Feature]`)
-- **Discussions / questions:** Use the **Issues** tab too — we'll convert to Discussions once volume warrants it.
-
-When reporting a bug, please include:
-
-- DevSpace version (Help → About → Copy System Info).
-- Windows version.
-- Reproduction steps.
-- Screenshots if it's UI-related.
+### Tool templates
+- Reusable tool collections shared across projects
+- Free tier: 3 templates · Team tier (planned): 20
 
 ---
 
-## 📜 License
+## 🏗️ How it works
 
-The DevSpace **binaries** in this repository are distributed for evaluation under preview terms — free for personal and internal use, no warranty, no redistribution.
+```mermaid
+graph TB
+    User([👤 You])
 
-The **source code** is currently private. A formal license decision (likely MIT or proprietary-with-source-available) will accompany the first non-preview release.
+    subgraph Desktop["💻 Your Windows machine"]
+        Electron["🖼️ Electron + React UI"]
+        API["⚙️ .NET 9 WebAPI<br/>(local, port 7003)"]
+        DB[("🗄️ SQLite<br/>(encrypted credentials)")]
+        Git[".git CLI"]
+        WinAPIs["🪟 Registry / Start Menu / PATH"]
+    end
+
+    User -->|clicks| Electron
+    Electron <-->|HTTP + SignalR| API
+    API --> DB
+    API --> Git
+    API --> WinAPIs
+
+    style Electron fill:#28B0F7,color:#fff,stroke:#0277bd
+    style API fill:#4CAF50,color:#fff,stroke:#2e7d32
+    style DB fill:#FF9800,color:#fff,stroke:#e65100
+    style WinAPIs fill:#7E57C2,color:#fff,stroke:#4527a0
+```
+
+A two-process desktop app: an **Electron renderer** for the UI, a **local .NET 9 WebAPI** for everything else (running on `localhost:7003`).
+
+**Local-first.** Your data never leaves your machine. No cloud account required, no telemetry by default.
+
+**Stack:** Electron · React 18 · TypeScript · Tailwind CSS · Redux Toolkit · .NET 9 · Entity Framework Core · SignalR · SQLite · Clean Architecture · CQRS · DDD
+
+---
+
+## 🔒 Privacy & security
+
+DevSpace is built privacy-first.
+
+- ✅ **Local-first**: project data, credentials, and git history never leave your machine
+- ✅ **No telemetry by default**: opt-in only (currently disabled in v2.2.0-preview)
+- ✅ **Encryption at rest**: credentials encrypted with Windows DPAPI, scoped to your user account
+- ✅ **Shell command whitelist**: 21 vetted commands with argument sanitization — no arbitrary code execution
+- ✅ **No analytics, no ads, no third-party SDKs** in the binary
+
+📄 **[Read the full privacy policy](https://biswajitpanday.github.io/devspace/privacy.html)**
 
 ---
 
 ## 🗺️ Roadmap
 
-The headline post-preview milestones:
+| Status | Phase | What |
+|---|---|---|
+| ✅ Shipped | v2.2.0-preview (Apr 2026) | Public preview · tool templates · typography overhaul · market readiness |
+| 🚧 In progress | Cloud sync (Phase 1) | Supabase-backed, opt-in: settings, theme, recent projects |
+| 📋 Planned | Team workspaces | €15/user/month: shared project templates, audit log |
+| 📋 Planned | macOS support | Once Windows is rock-solid |
 
-- Code signing (Azure Trusted Signing).
-- Auto-update.
-- Cloud sync (settings only — projects/credentials stay local).
-- macOS build.
-
-Track progress on this repo's release feed.
+Individual use stays free, always.
 
 ---
 
-_Built by [Biswajit Panday](https://github.com/biswajitpanday) & [Abdullah Saleh Robin](https://github.com/robinabdullah). Thanks for trying it._
+## 🐛 Found a bug?
+
+Open an issue: [github.com/biswajitpanday/Devspace-Releases/issues](https://github.com/biswajitpanday/Devspace-Releases/issues)
+
+Bug reports with the following are gold:
+- Windows version (run `winver`)
+- DevSpace version (Settings → About)
+- Steps to reproduce
+- Screenshot if it's visual
+
+---
+
+## 💖 Support the project
+
+DevSpace is free for individuals. If it saves you time:
+
+- ⭐ **Star this repo** — costs nothing, helps a lot
+- 💼 **Hire me**: [linkedin.com/in/biswajitpanday](https://www.linkedin.com/in/biswajitpanday/) — open to opportunities in Germany
+- 📰 **Share with developers** who'd find it useful
+- 🐛 **Report bugs** — every report makes the next release better
+
+---
+
+## 📄 License
+
+DevSpace is **free for individual developers** during the public preview.
+
+This repository contains **release binaries only**. Source code is **proprietary** and not distributed.
+
+A team tier with shared workspaces is planned (€15/user/month). Individual use will remain free.
+
+---
+
+## 👤 Authors
+
+<div align="center">
+
+**Biswajit Panday** — Senior .NET Architect & AI Solutions Engineer (Lead)
+
+[![Website](https://img.shields.io/badge/Website-biswajitpanday.github.io-blue?style=flat-square&logo=googlechrome&logoColor=white)](https://biswajitpanday.github.io/)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-biswajitpanday-blue?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/biswajitpanday/)
+[![GitHub](https://img.shields.io/badge/GitHub-biswajitpanday-black?style=flat-square&logo=github&logoColor=white)](https://github.com/biswajitpanday)
+[![Email](https://img.shields.io/badge/Email-avengers4923%40gmail.com-red?style=flat-square&logo=gmail&logoColor=white)](mailto:avengers4923@gmail.com)
+
+**Abdullah Saleh Robin** — Co-author
+
+[![GitHub](https://img.shields.io/badge/GitHub-robinabdullah-black?style=flat-square&logo=github&logoColor=white)](https://github.com/robinabdullah)
+
+*Built with ❤️ on nights and weekends — concept to public preview, 18 months.*
+
+</div>
