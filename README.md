@@ -22,7 +22,7 @@ Screenshots needed in the public repo at /assets/:
 [![Platform](https://img.shields.io/badge/Windows-10%2F11-blue?style=for-the-badge&logo=windows)](https://github.com/biswajitpanday/Devspace-Releases/releases/latest)
 [![Stars](https://img.shields.io/github/stars/biswajitpanday/Devspace-Releases?style=for-the-badge&color=yellow)](https://github.com/biswajitpanday/Devspace-Releases/stargazers)
 
-[**🌐 Website**](https://biswajitpanday.github.io/devspace/) · [**⬇️ Download**](https://github.com/biswajitpanday/Devspace-Releases/releases/latest) · [**🔒 Privacy**](https://biswajitpanday.github.io/devspace/privacy.html) · [**🐛 Report a bug**](https://github.com/biswajitpanday/Devspace-Releases/issues)
+[**🌐 Website**](https://biswajitpanday.github.io/devspace/) · [**⬇️ Download**](https://github.com/biswajitpanday/Devspace-Releases/releases/latest) · [**🔒 Privacy**](PRIVACY.md) · [**🐛 Report a bug**](https://github.com/biswajitpanday/Devspace-Releases/issues)
 
 ![DevSpace dashboard](assets/hero.png)
 
@@ -119,7 +119,7 @@ DevSpace gives you **one card per project** on a dashboard. Click it and your ID
 
 ### Tool templates
 - Reusable tool collections shared across projects
-- Free tier: 3 templates · Team tier (planned): 20
+- Save your most-used tool sets and apply them to any project
 
 ---
 
@@ -151,7 +151,7 @@ graph TB
 
 A two-process desktop app: an **Electron renderer** for the UI, a **local .NET 9 WebAPI** for everything else (running on `localhost:7003`).
 
-**Local-first.** Your data never leaves your machine. No cloud account required, no telemetry by default.
+**Local-first.** Your data never leaves your machine. No cloud account required, no telemetry in this release.
 
 **Stack:** Electron · React 18 · TypeScript · Tailwind CSS · Redux Toolkit · .NET 9 · Entity Framework Core · SignalR · SQLite · Clean Architecture · CQRS · DDD
 
@@ -162,12 +162,12 @@ A two-process desktop app: an **Electron renderer** for the UI, a **local .NET 9
 DevSpace is built privacy-first.
 
 - ✅ **Local-first**: project data, credentials, and git history never leave your machine
-- ✅ **No telemetry by default**: opt-in only (currently disabled in v2.2.0-preview)
+- ✅ **No telemetry**: this release collects nothing — no app launch pings, no analytics. Future versions will be opt-in only.
 - ✅ **Encryption at rest**: credentials encrypted with Windows DPAPI, scoped to your user account
 - ✅ **Shell command whitelist**: 21 vetted commands with argument sanitization — no arbitrary code execution
 - ✅ **No analytics, no ads, no third-party SDKs** in the binary
 
-📄 **[Read the full privacy policy](https://biswajitpanday.github.io/devspace/privacy.html)**
+📄 **[Read the full privacy policy](PRIVACY.md)**
 
 ---
 
@@ -177,10 +177,7 @@ DevSpace is built privacy-first.
 |---|---|---|
 | ✅ Shipped | v2.2.0-preview (Apr 2026) | Public preview · tool templates · typography overhaul · market readiness |
 | 🚧 In progress | Cloud sync (Phase 1) | Supabase-backed, opt-in: settings, theme, recent projects |
-| 📋 Planned | Team workspaces | €15/user/month: shared project templates, audit log |
 | 📋 Planned | macOS support | Once Windows is rock-solid |
-
-Individual use stays free, always.
 
 ---
 
@@ -198,7 +195,7 @@ Bug reports with the following are gold:
 
 ## 💖 Support the project
 
-DevSpace is free for individuals. If it saves you time:
+DevSpace is free during the public preview. If it saves you time:
 
 - ⭐ **Star this repo** — costs nothing, helps a lot
 - 💼 **Hire me**: [linkedin.com/in/biswajitpanday](https://www.linkedin.com/in/biswajitpanday/) — open to opportunities in Germany
@@ -209,11 +206,9 @@ DevSpace is free for individuals. If it saves you time:
 
 ## 📄 License
 
-DevSpace is **free for individual developers** during the public preview.
+DevSpace is **free during the public preview**.
 
 This repository contains **release binaries only**. Source code is **proprietary** and not distributed.
-
-A team tier with shared workspaces is planned (€15/user/month). Individual use will remain free.
 
 ---
 
@@ -226,11 +221,13 @@ A team tier with shared workspaces is planned (€15/user/month). Individual use
 [![Website](https://img.shields.io/badge/Website-biswajitpanday.github.io-blue?style=flat-square&logo=googlechrome&logoColor=white)](https://biswajitpanday.github.io/)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-biswajitpanday-blue?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/biswajitpanday/)
 [![GitHub](https://img.shields.io/badge/GitHub-biswajitpanday-black?style=flat-square&logo=github&logoColor=white)](https://github.com/biswajitpanday)
-[![Email](https://img.shields.io/badge/Email-avengers4923%40gmail.com-red?style=flat-square&logo=gmail&logoColor=white)](mailto:avengers4923@gmail.com)
+[![Email](https://img.shields.io/badge/Email-biswajitmailid%40gmail.com-red?style=flat-square&logo=gmail&logoColor=white)](mailto:biswajitmailid@gmail.com)
 
 **Abdullah Saleh Robin** — Co-author
 
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-robinabdullah-blue?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/robinabdullah/)
 [![GitHub](https://img.shields.io/badge/GitHub-robinabdullah-black?style=flat-square&logo=github&logoColor=white)](https://github.com/robinabdullah)
+[![Email](https://img.shields.io/badge/Email-abdullahsalehrobin%40gmail.com-red?style=flat-square&logo=gmail&logoColor=white)](mailto:abdullahsalehrobin@gmail.com)
 
 *Built with ❤️ on nights and weekends — concept to public preview, 18 months.*
 
