@@ -59,11 +59,11 @@ DevSpace gives you **one card per project** on a dashboard. Click it and your ID
 </tr>
 <tr>
 <td width="50%"><img src="assets/project-details.png" alt="Project details"/></td>
-<td width="50%"><img src="assets/wizard.png" alt="Project wizard"/></td>
+<td width="50%"><img src="assets/tools-templates.png" alt="Tool templates"/></td>
 </tr>
 <tr>
-<td><b>Project details at a glance</b><br>Tools, credentials (DPAPI-encrypted), quick actions, and git status — all in one card.</td>
-<td><b>Quick setup wizard</b><br>Add a project in 3 steps. Auto-detect git, link your tools, save credentials.</td>
+<td><b>Multiple encrypted credentials per project</b><br>DPAPI-encrypted vault, drag-to-reorder, custom labels, one-click copy. Tools, credentials, quick actions — all in one card.</td>
+<td><b>Tool Templates — reusable collections</b><br>Save your most-used tool sets (".NET API", "React Frontend") and apply them to any project in one click. Bulk-import into existing projects.</td>
 </tr>
 </table>
 
@@ -88,38 +88,94 @@ DevSpace gives you **one card per project** on a dashboard. Click it and your ID
 
 ## ✨ Features
 
-### One dashboard, every project
-- Pin frequently-used projects · search by tag, organization, or path
-- Bulk-import git repos by scanning directory trees
-- Per-project: tools, credentials, quick commands, git status
+### 🔍 Auto-discover your dev tools
 
-### Auto-discover your dev tools
-- Dynamic Windows enumeration: Registry ARP + Start Menu + PATH
+![Tool discovery](assets/tool-discovery.png)
+
+- Dynamic Windows enumeration in parallel: Registry ARP (HKLM, HKLM\WOW6432Node, HKCU) + Start Menu shortcuts + PATH scanning
 - Finds **100+ apps in under 3 seconds** on a typical dev machine
-- Zero hardcoded patterns — new tools appear automatically
-- Smart classification: IDEs, runtimes, source control, containers, databases, terminals, browsers, and more
+- Zero hardcoded patterns — new tools appear automatically as you install them
+- Smart classification across 16 categories: IDEs, runtimes, SCM, containers, databases, terminals, browsers, build tools, cloud CLIs, and more
 
-### Encrypted credential vault
-- Per-project credentials encrypted with **Microsoft DataProtection (DPAPI)**
-- Tied to your Windows user account — never plain text on disk
-- One-click copy with success feedback
-- Multiple credentials per project
+### 🔄 Manual rescan with live progress
 
-### Full git workflow, built in
-- Visual commit graph with branch / author / date filters
-- Blame view, conflict resolver, branch comparison
-- Stash management, cherry-pick, rebase, merge
-- 4-panel layout: graph + commit details + staging + diff
-- Real-time progress via SignalR · operation cancellation
+![Scan tools](assets/scan-tools.png)
 
-### Quick actions per project
-- 26+ built-in git commands · custom command terminal
-- Drag-and-drop reordering · custom priority per project
-- One click launches: IDE + terminal + browser + DB client
+- One-click **Scan Tools** rescans your machine after you install something new
+- Live SignalR progress: each source (Registry / Start Menu / PATH) reports in real time
+- Diff against last scan — see what's new, what changed
+- Skip or undo individual results before saving
 
-### Tool templates
-- Reusable tool collections shared across projects
-- Save your most-used tool sets and apply them to any project
+### 📑 Tool Templates — reusable tool collections
+
+![Tool templates](assets/tools-templates.png)
+
+- Save your most-used tool sets (e.g. **".NET API"**, **"React Frontend"**, **"Data Pipeline"**)
+- Apply to a project in one click — all configured tools added at once
+- Edit and reuse across projects · top-level navigation at `/templates`
+- Bulk-import tools from a template into existing projects too — no need to re-add one by one
+
+### 🔐 Multiple encrypted credentials per project
+
+![Project details](assets/project-details.png)
+
+- Per-project credentials encrypted with **Microsoft DataProtection (DPAPI)**, tied to your Windows user account — never plain text on disk
+- **Multiple credentials per project**: dev DB password, staging DB, API tokens, SSH keys — all in one card
+- Drag-and-drop to reorder · one-click copy with success feedback
+- Custom labels per credential (Username, DB Password, API Token, anything you want)
+
+### 🛠️ Add or edit projects in 3 steps
+
+![Project wizard](assets/wizard.png)
+
+- 3-step wizard: **Basic Info → Directories → Credentials**
+- Auto-detects git on directory selection — no manual repo URL needed
+- Apply a Tool Template during creation to bulk-add tools
+- Same wizard, **Edit mode** — every field stays editable
+
+### 📊 Full git workflow, built in
+
+![Git workflow](assets/git-view.png)
+
+- Visual commit graph: zoom 20-300%, filter by branch / author / date
+- 4-panel layout: graph + commit details + staging area + diff viewer
+- 6-tab sidebar: **Commit · Branch Explorer · Commit History · Remotes · Tags · Stashes**
+- Stash management, cherry-pick, rebase, merge, conflict resolver, branch comparison
+- 27-language syntax highlighting · word-level diff · whitespace toggle · Ctrl+F search
+
+### ✏️ Commit panel with hunk-level staging
+
+![Commit panel](assets/git-commit-panel.png)
+
+- Stage individual hunks or whole files using real `git add` / `git restore --staged` (not faked)
+- Live diff preview as you stage
+- Inline commit message + commit button — no separate dialog
+- 13 input dialogs · 4 context menus · 10+ keyboard shortcuts · Ctrl+K command palette
+
+### 📜 Commit history with smart filters
+
+![Commit history](assets/git-commit-histories.png)
+
+- Filter by branch, author, or date
+- Click any commit for full details + diff
+- Per-file history view · blame view · branch comparison
+- Manual refresh button — no disk-thrashing auto-poll
+
+### 🔗 Personalized quick links
+
+![Personalized links](assets/personalized-links.png)
+
+- Pin your most-used URLs, terminal commands, or apps to the dashboard
+- Three types: 🌐 **Web link** · 💻 **Terminal command** · ▶️ **Application launch**
+- Always one click away — no project context needed
+- Stored locally, synced via cloud sync (when that ships)
+
+### 🏠 One dashboard, every project
+
+- Pin frequently-used projects · search by tag, organization, or path
+- Bulk-import git repos by scanning directory trees (auto-finds every `.git` repo, deduplicates, imports in one click)
+- Per-project: tools, credentials, quick commands, git status
+- Up to 6 quick-action buttons per project, drag-and-drop reorderable
 
 ---
 
@@ -187,7 +243,7 @@ Open an issue: [github.com/biswajitpanday/Devspace-Releases/issues](https://gith
 
 Bug reports with the following are gold:
 - Windows version (run `winver`)
-- DevSpace version (Settings → About)
+- DevSpace version (Help → About DevSpace)
 - Steps to reproduce
 - Screenshot if it's visual
 
@@ -206,9 +262,11 @@ DevSpace is free during the public preview. If it saves you time:
 
 ## 📄 License
 
-DevSpace is **free during the public preview**.
+DevSpace is **free during the public preview** for personal and commercial use on Windows machines you own or control.
 
 This repository contains **release binaries only**. Source code is **proprietary** and not distributed.
+
+See [LICENSE.md](LICENSE.md) for the full End User License Agreement (no redistribution, no reverse engineering, build expires 2027-04-26, etc.).
 
 ---
 

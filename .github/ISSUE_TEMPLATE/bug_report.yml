@@ -1,0 +1,104 @@
+name: Bug report
+description: Report something broken or unexpected in DevSpace
+title: "[Bug]: "
+labels: ["bug", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting a bug. The more detail you give, the faster we can fix it.
+
+        **Before opening:** please search existing issues to avoid duplicates.
+
+  - type: input
+    id: devspace-version
+    attributes:
+      label: DevSpace version
+      description: Open DevSpace -> Help -> About DevSpace -> Copy System Info, or check the title bar.
+      placeholder: "v2.2.0-preview.1"
+    validations:
+      required: true
+
+  - type: input
+    id: os-version
+    attributes:
+      label: Windows version
+      description: Run `winver` and paste the full version + build (e.g. "Windows 11 26H2 (Build 26100)").
+      placeholder: "Windows 11 26H2 (Build 26100)"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: install-type
+    attributes:
+      label: Install type
+      description: Which build are you running?
+      options:
+        - NSIS Installer (DevSpace.Setup.*.exe)
+        - Portable Zip (DevSpace-*-portable.zip)
+        - Don't know
+    validations:
+      required: true
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: A clear description of the bug. What did you see vs. what did you expect?
+      placeholder: |
+        I clicked "Open Project" on a project card, and the IDE didn't launch.
+        I expected VS Code to open with the project folder loaded.
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: Numbered steps so we can reproduce this on our end.
+      placeholder: |
+        1. Launch DevSpace
+        2. Click on the "MyProject" card
+        3. Click the "VS Code" quick action button
+        4. Nothing happens (expected: VS Code launches)
+    validations:
+      required: true
+
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots or screen recording
+      description: Drag and drop images/videos here. **Blur any sensitive paths, credentials, or personal info before uploading.**
+    validations:
+      required: false
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs
+      description: |
+        If relevant, paste log output from `%LOCALAPPDATA%\DevSpace\logs\` (most recent file).
+        Redact any paths, project names, or credentials you don't want to share.
+      render: shell
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional context
+      description: Anything else? Frequency (always / sometimes / once)? Workarounds you tried?
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: confirmation
+    attributes:
+      label: Pre-flight check
+      options:
+        - label: I searched existing issues and this is not a duplicate
+          required: true
+        - label: The bug is in DevSpace itself, not a third-party app it launched
+          required: true
+        - label: I have removed any credentials, secrets, or personal info from screenshots and logs
+          required: true
