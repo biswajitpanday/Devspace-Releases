@@ -270,22 +270,23 @@ See [LICENSE.md](LICENSE.md) for the full End User License Agreement (no redistr
 
 ---
 
-## 👤 Authors
+## 👤 Author
 
 <div align="center">
 
-**Biswajit Panday** — Senior .NET Architect & AI Solutions Engineer (Lead)
+**Biswajit Panday** — Author & Developer · Senior .NET Architect & AI Solutions Engineer
 
 [![Website](https://img.shields.io/badge/Website-biswajitpanday.github.io-blue?style=flat-square&logo=googlechrome&logoColor=white)](https://biswajitpanday.github.io/)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-biswajitpanday-blue?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/biswajitpanday/)
 [![GitHub](https://img.shields.io/badge/GitHub-biswajitpanday-black?style=flat-square&logo=github&logoColor=white)](https://github.com/biswajitpanday)
 [![Email](https://img.shields.io/badge/Email-biswajitmailid%40gmail.com-red?style=flat-square&logo=gmail&logoColor=white)](mailto:biswajitmailid@gmail.com)
 
-**Abdullah Saleh Robin** — Co-author
+**Abdullah Saleh Robin** — Planning Advisor
+
+*He was with me during the planning phase and helped by providing some insights and ideas.*
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-robinabdullah-blue?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/robinabdullah/)
 [![GitHub](https://img.shields.io/badge/GitHub-robinabdullah-black?style=flat-square&logo=github&logoColor=white)](https://github.com/robinabdullah)
-[![Email](https://img.shields.io/badge/Email-abdullahsalehrobin%40gmail.com-red?style=flat-square&logo=gmail&logoColor=white)](mailto:abdullahsalehrobin@gmail.com)
 
 *Built with ❤️ on nights and weekends — concept to public preview, 18 months.*
 
