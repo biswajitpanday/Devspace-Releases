@@ -42,11 +42,11 @@ Every developer morning looks the same:
 | 🌐 Open the right tabs | Docs, dashboard, ticket tracker |
 | 🗄️ Launch the DB client | Connect with the right credentials |
 
-**~30 minutes lost. Every. Single. Day.**
+**Several projects a day, and every switch means rebuilding your setup.**
 
 ## ✅ The solution
 
-DevSpace gives you **one card per project** on a dashboard. Click it and your IDE, terminals, browser tabs, and DB client launch — exactly the way you set them up.
+DevSpace gives you **one card per project** on a dashboard. Each card keeps that project's tools one click away (your IDE, terminal commands, browser tabs and DB client, set up once, reusable as templates), along with its credentials and a built-in visual Git client.
 
 <table>
 <tr>
@@ -209,7 +209,7 @@ A two-process desktop app: an **Electron renderer** for the UI, a **local .NET 9
 
 **Local-first.** Your data never leaves your machine. No cloud account required, no telemetry in this release.
 
-**Stack:** Electron · React 18 · TypeScript · Tailwind CSS · Redux Toolkit · .NET 9 · Entity Framework Core · SignalR · SQLite · Clean Architecture · CQRS · DDD
+**Stack:** Electron · React 18 · TypeScript · Tailwind CSS · Redux Toolkit · .NET 9 · Entity Framework Core · SignalR · SQLite · layered architecture (Repository/Service)
 
 ---
 
